@@ -1,0 +1,118 @@
+ap#sh run
+Building configuration...
+
+Current configuration : 2374 bytes
+!
+version 12.3
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname ap
+!
+enable secret 5 $1$Lim/$B08Mr8JYe5dGftj1x40VS/
+!
+led display alternate
+ip subnet-zero
+ip name-server 10.6.0.1
+!
+!
+aaa new-model
+!
+!
+aaa group server radius rad_eap
+ server 10.205.20.1 auth-port 1812 acct-port 1813
+!         
+aaa group server radius rad_acct
+ server 10.205.20.1 auth-port 1812 acct-port 1813
+!
+aaa authentication login eap_methods group rad_eap
+aaa accounting network acct_methods start-stop group rad_acct
+aaa session-id common
+!
+dot11 ssid comme-tu-veut
+   authentication open eap eap_methods 
+   authentication network-eap eap_methods 
+   authentication key-management wpa
+   guest-mode
+!
+power inline negotiation prestandard source
+!
+!
+username Cisco password 7 13261E010803
+!
+bridge irb
+!
+!
+interface Dot11Radio0
+ no ip address
+ no ip route-cache
+ !
+ encryption mode ciphers aes-ccm 
+ !
+ ssid comme-tu-veut
+ !
+ speed basic-1.0 basic-2.0 basic-5.5 6.0 9.0 basic-11.0 12.0 18.0 24.0 36.0 48.0 54.0
+ power client 2
+ power local cck -1
+ power local ofdm -1
+ channel 2422
+ station-role root
+ bridge-group 1
+ bridge-group 1 subscriber-loop-control
+ bridge-group 1 block-unknown-source
+ no bridge-group 1 source-learning
+ no bridge-group 1 unicast-flooding
+ bridge-group 1 spanning-disabled
+!
+interface Dot11Radio1
+ no ip address
+ no ip route-cache
+ shutdown
+ no dfs band block
+ speed basic-6.0 9.0 basic-12.0 18.0 basic-24.0 36.0 48.0 54.0
+ channel dfs
+ station-role root
+ bridge-group 1
+ bridge-group 1 subscriber-loop-control
+ bridge-group 1 block-unknown-source
+ no bridge-group 1 source-learning
+ no bridge-group 1 unicast-flooding
+ bridge-group 1 spanning-disabled
+!
+interface FastEthernet0
+ no ip address
+ no ip route-cache
+ duplex auto
+ speed auto
+ bridge-group 1
+ no bridge-group 1 source-learning
+ bridge-group 1 spanning-disabled
+ hold-queue 160 in
+!
+interface BVI1
+ ip address 10.205.6.134 255.255.0.0
+ no ip route-cache
+!
+ip default-gateway 10.205.20.1
+ip http server
+no ip http secure-server
+ip http help-path http://www.cisco.com/warp/public/779/smbiz/prodconfig/help/eag
+ip radius source-interface BVI1 
+!
+radius-server host 10.205.20.1 auth-port 1812 acct-port 1813 key 7 071B245F5A001702464058
+radius-server vsa send accounting
+!
+control-plane
+!
+bridge 1 route ip
+!
+!
+!
+line con 0
+line vty 0 4
+!
+end       
+
+ap#
