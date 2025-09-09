@@ -1,0 +1,314 @@
+pi@pi205-1:~/R501-TP-03-WPA-Entreprise-SAE-base $ ../eapol_test-2.10-arm64 -c eap-mschapv2.conf -a 10.205.20.1 -p 1812 -s testing123
+Reading configuration file 'eap-mschapv2.conf'
+Line: 1 - start of a new network block
+eapol_flags=0 (0x0)
+key_mgmt: 0x4
+eap methods - hexdump(len=16): 00 00 00 00 1a 00 00 00 00 00 00 00 00 00 00 00
+identity - hexdump_ascii(len=3):
+     62 6f 62                                          bob             
+password - hexdump_ascii(len=5):
+     68 65 6c 6c 6f                                    hello           
+Priority group 0
+   id=0 ssid=''
+Authentication server 10.205.20.1:1812
+RADIUS local address: 10.205.1.2:49508
+ENGINE: Loading builtin engines
+ENGINE: Loading builtin engines
+EAPOL: SUPP_PAE entering state DISCONNECTED
+EAPOL: KEY_RX entering state NO_KEY_RECEIVE
+EAPOL: SUPP_BE entering state INITIALIZE
+EAP: EAP entering state DISABLED
+EAPOL: External notification - portValid=0
+EAPOL: External notification - portEnabled=1
+EAPOL: SUPP_PAE entering state CONNECTING
+EAPOL: SUPP_BE entering state IDLE
+EAP: EAP entering state INITIALIZE
+EAP: EAP entering state IDLE
+Sending fake EAP-Request-Identity
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_PAE entering state RESTART
+EAP: EAP entering state INITIALIZE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_PAE entering state AUTHENTICATING
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=253 method=1 vendor=0 vendorMethod=0
+EAP: EAP entering state IDENTITY
+CTRL-EVENT-EAP-STARTED EAP authentication started
+EAP: Status notification: started (param=)
+EAP: EAP-Request Identity data - hexdump_ascii(len=0):
+EAP: using real identity - hexdump_ascii(len=3):
+     62 6f 62                                          bob             
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+WPA: eapol_test_eapol_send(type=0 len=8)
+TX EAP -> RADIUS - hexdump(len=8): 02 fd 00 08 01 62 6f 62
+Encapsulating EAP message into a RADIUS packet
+Learned identity from EAP-Response-Identity - hexdump(len=3): 62 6f 62
+Sending RADIUS message to authentication server
+RADIUS message: code=1 (Access-Request) identifier=0 length=120
+   Attribute 1 (User-Name) length=5
+      Value: 'bob'
+   Attribute 4 (NAS-IP-Address) length=6
+      Value: 127.0.0.1
+   Attribute 31 (Calling-Station-Id) length=19
+      Value: '02-00-00-00-00-01'
+   Attribute 12 (Framed-MTU) length=6
+      Value: 1400
+   Attribute 61 (NAS-Port-Type) length=6
+      Value: 19
+   Attribute 6 (Service-Type) length=6
+      Value: 2
+   Attribute 77 (Connect-Info) length=24
+      Value: 'CONNECT 11Mbps 802.11b'
+   Attribute 79 (EAP-Message) length=10
+      Value: 02fd000801626f62
+   Attribute 80 (Message-Authenticator) length=18
+      Value: 628357a4ccd2f808e196b319c7667503
+Next RADIUS client retransmit in 3 seconds
+EAPOL: SUPP_BE entering state RECEIVE
+Received 64 bytes from RADIUS server
+Received RADIUS message
+RADIUS message: code=11 (Access-Challenge) identifier=0 length=64
+   Attribute 79 (EAP-Message) length=8
+      Value: 01fe00061520
+   Attribute 80 (Message-Authenticator) length=18
+      Value: 35f2d4ff291a316968652106ef10c4b8
+   Attribute 24 (State) length=18
+      Value: 0dc9cbdf0d37de1365081e194ab789d8
+STA 02:00:00:00:00:01: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+
+RADIUS packet matching with station
+decapsulated EAP packet (code=1 id=254 len=6) from RADIUS server: EAP-Request-TTLS (21)
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=254 method=21 vendor=0 vendorMethod=0
+EAP: EAP entering state GET_METHOD
+EAP: configuration does not allow: vendor 0 method 21
+EAP: vendor 0 method 21 not allowed
+CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=21 -> NAK
+EAP: Status notification: refuse proposed method (param=TTLS)
+EAP: Building EAP-Nak (requested type 21 vendor=0 method=0 not allowed)
+EAP: allowed methods - hexdump(len=1): 1a
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+WPA: eapol_test_eapol_send(type=0 len=6)
+TX EAP -> RADIUS - hexdump(len=6): 02 fe 00 06 03 1a
+Encapsulating EAP message into a RADIUS packet
+  Copied RADIUS State Attribute
+Sending RADIUS message to authentication server
+RADIUS message: code=1 (Access-Request) identifier=1 length=136
+   Attribute 1 (User-Name) length=5
+      Value: 'bob'
+   Attribute 4 (NAS-IP-Address) length=6
+      Value: 127.0.0.1
+   Attribute 31 (Calling-Station-Id) length=19
+      Value: '02-00-00-00-00-01'
+   Attribute 12 (Framed-MTU) length=6
+      Value: 1400
+   Attribute 61 (NAS-Port-Type) length=6
+      Value: 19
+   Attribute 6 (Service-Type) length=6
+      Value: 2
+   Attribute 77 (Connect-Info) length=24
+      Value: 'CONNECT 11Mbps 802.11b'
+   Attribute 79 (EAP-Message) length=8
+      Value: 02fe0006031a
+   Attribute 24 (State) length=18
+      Value: 0dc9cbdf0d37de1365081e194ab789d8
+   Attribute 80 (Message-Authenticator) length=18
+      Value: 2fd3f24865efec9d5910bcb9cde897dc
+Next RADIUS client retransmit in 3 seconds
+EAPOL: SUPP_BE entering state RECEIVE
+Received 100 bytes from RADIUS server
+Received RADIUS message
+RADIUS message: code=11 (Access-Challenge) identifier=1 length=100
+   Attribute 79 (EAP-Message) length=44
+      Value: 01ff002a1a01ff002510f9ede25d9ae39f9f501416bef4365183667265657261646975732d332e322e31
+   Attribute 80 (Message-Authenticator) length=18
+      Value: f3c4fec7d3433a7acdb221aa4a2d8e54
+   Attribute 24 (State) length=18
+      Value: 0dc9cbdf0c36d11365081e194ab789d8
+STA 02:00:00:00:00:01: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+
+RADIUS packet matching with station
+decapsulated EAP packet (code=1 id=255 len=42) from RADIUS server: EAP-Request-Unknown (26)
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=255 method=26 vendor=0 vendorMethod=0
+EAP: EAP entering state GET_METHOD
+CTRL-EVENT-EAP-PROPOSED-METHOD vendor=0 method=26
+EAP: Status notification: accept proposed method (param=MSCHAPV2)
+EAP: Initialize selected EAP method: vendor 0 method 26 (MSCHAPV2)
+CTRL-EVENT-EAP-METHOD EAP vendor 0 method 26 (MSCHAPV2) selected
+EAP: EAP entering state METHOD
+EAP-MSCHAPV2: RX identifier 255 mschapv2_id 255
+EAP-MSCHAPV2: Received challenge
+EAP-MSCHAPV2: Authentication Servername - hexdump_ascii(len=16):
+     66 72 65 65 72 61 64 69 75 73 2d 33 2e 32 2e 31   freeradius-3.2.1
+EAP-MSCHAPV2: Generating Challenge Response
+Get randomness: len=16 entropy=0
+random from os_get_random - hexdump(len=16): 21 b9 8b 16 fa 05 1c 1f 43 6e 2b e7 d2 69 2f 97
+random_mix_pool - hexdump(len=20): 0d b9 b1 bf 70 7c bd fa 8b 8c 0a 46 d8 96 87 a4 8e 89 0d 7d
+random from internal pool - hexdump(len=16): 52 c7 66 0a bf 85 ed d3 d8 c1 5b 8c 5d 36 f0 8e
+mixed random - hexdump(len=16): 73 7e ed 1c 45 80 f1 cc 9b af 70 6b 8f 5f df 19
+MSCHAPV2: Identity - hexdump_ascii(len=3):
+     62 6f 62                                          bob             
+MSCHAPV2: Username - hexdump_ascii(len=3):
+     62 6f 62                                          bob             
+MSCHAPV2: auth_challenge - hexdump(len=16): f9 ed e2 5d 9a e3 9f 9f 50 14 16 be f4 36 51 83
+MSCHAPV2: peer_challenge - hexdump(len=16): 73 7e ed 1c 45 80 f1 cc 9b af 70 6b 8f 5f df 19
+MSCHAPV2: username - hexdump_ascii(len=3):
+     62 6f 62                                          bob             
+MSCHAPV2: password - hexdump_ascii(len=5):
+     68 65 6c 6c 6f                                    hello           
+MSCHAPV2: NT Response - hexdump(len=24): 83 46 f9 fe 3f ef f0 1a a5 68 11 d2 a8 1c 71 97 e5 97 72 c0 ae 38 61 23
+MSCHAPV2: Auth Response - hexdump(len=20): b6 59 25 66 f0 ff 9a 8b 81 13 a9 3f 56 75 eb f8 84 fc 0f 65
+MSCHAPV2: Master Key - hexdump(len=16): 63 0e f0 49 ee f0 8d f1 98 fa 97 ff 69 b2 ab 6d
+EAP-MSCHAPV2: TX identifier 255 mschapv2_id 255 (response)
+EAP: method process -> ignore=FALSE methodState=MAY_CONT decision=FAIL eapRespData=0x55ac32da20
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+WPA: eapol_test_eapol_send(type=0 len=62)
+TX EAP -> RADIUS - hexdump(len=62): 02 ff 00 3e 1a 02 ff 00 39 31 73 7e ed 1c 45 80 f1 cc 9b af 70 6b 8f 5f df 19 00 00 00 00 00 00 00 00 83 46 f9 fe 3f ef f0 1a a5 68 11 d2 a8 1c 71 97 e5 97 72 c0 ae 38 61 23 00 62 6f 62
+Encapsulating EAP message into a RADIUS packet
+  Copied RADIUS State Attribute
+Sending RADIUS message to authentication server
+RADIUS message: code=1 (Access-Request) identifier=2 length=192
+   Attribute 1 (User-Name) length=5
+      Value: 'bob'
+   Attribute 4 (NAS-IP-Address) length=6
+      Value: 127.0.0.1
+   Attribute 31 (Calling-Station-Id) length=19
+      Value: '02-00-00-00-00-01'
+   Attribute 12 (Framed-MTU) length=6
+      Value: 1400
+   Attribute 61 (NAS-Port-Type) length=6
+      Value: 19
+   Attribute 6 (Service-Type) length=6
+      Value: 2
+   Attribute 77 (Connect-Info) length=24
+      Value: 'CONNECT 11Mbps 802.11b'
+   Attribute 79 (EAP-Message) length=64
+      Value: 02ff003e1a02ff003931737eed1c4580f1cc9baf706b8f5fdf1900000000000000008346f9fe3feff01aa56811d2a81c7197e59772c0ae38612300626f62
+   Attribute 24 (State) length=18
+      Value: 0dc9cbdf0c36d11365081e194ab789d8
+   Attribute 80 (Message-Authenticator) length=18
+      Value: 3c41dc8b11d87ee0bd4fae561f035098
+Next RADIUS client retransmit in 3 seconds
+EAPOL: SUPP_BE entering state RECEIVE
+Received 109 bytes from RADIUS server
+Received RADIUS message
+RADIUS message: code=11 (Access-Challenge) identifier=2 length=109
+   Attribute 79 (EAP-Message) length=53
+      Value: 010000331a03ff002e533d42363539323536364630464639413842383131334139334635363735454246383834464330463635
+   Attribute 80 (Message-Authenticator) length=18
+      Value: ce0d2f3ee6b19b1327bd5282e120530f
+   Attribute 24 (State) length=18
+      Value: 0dc9cbdf0fc9d11365081e194ab789d8
+STA 02:00:00:00:00:01: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+
+RADIUS packet matching with station
+decapsulated EAP packet (code=1 id=0 len=51) from RADIUS server: EAP-Request-Unknown (26)
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Request id=0 method=26 vendor=0 vendorMethod=0
+EAP: EAP entering state METHOD
+EAP-MSCHAPV2: RX identifier 0 mschapv2_id 255
+EAP-MSCHAPV2: Received success
+EAP-MSCHAPV2: Success message - hexdump_ascii(len=0):
+EAP-MSCHAPV2: Authentication succeeded
+EAP: method process -> ignore=FALSE methodState=DONE decision=UNCOND_SUCC eapRespData=0x55ac32d730
+EAP-MSCHAPV2: Derived key - hexdump(len=32): fa 0f f6 6c 71 b5 49 a3 8d a2 d9 c0 0f 9a 93 b5 22 bc ee 6c 12 11 ca 83 f4 ca 75 88 84 3d ad b5
+EAP: EAP entering state SEND_RESPONSE
+EAP: EAP entering state IDLE
+EAPOL: SUPP_BE entering state RESPONSE
+EAPOL: txSuppRsp
+WPA: eapol_test_eapol_send(type=0 len=6)
+TX EAP -> RADIUS - hexdump(len=6): 02 00 00 06 1a 03
+Encapsulating EAP message into a RADIUS packet
+  Copied RADIUS State Attribute
+Sending RADIUS message to authentication server
+RADIUS message: code=1 (Access-Request) identifier=3 length=136
+   Attribute 1 (User-Name) length=5
+      Value: 'bob'
+   Attribute 4 (NAS-IP-Address) length=6
+      Value: 127.0.0.1
+   Attribute 31 (Calling-Station-Id) length=19
+      Value: '02-00-00-00-00-01'
+   Attribute 12 (Framed-MTU) length=6
+      Value: 1400
+   Attribute 61 (NAS-Port-Type) length=6
+      Value: 19
+   Attribute 6 (Service-Type) length=6
+      Value: 2
+   Attribute 77 (Connect-Info) length=24
+      Value: 'CONNECT 11Mbps 802.11b'
+   Attribute 79 (EAP-Message) length=8
+      Value: 020000061a03
+   Attribute 24 (State) length=18
+      Value: 0dc9cbdf0fc9d11365081e194ab789d8
+   Attribute 80 (Message-Authenticator) length=18
+      Value: 35ea4d11632c70c9ca436c11a5a2bc85
+Next RADIUS client retransmit in 3 seconds
+EAPOL: SUPP_BE entering state RECEIVE
+Received 157 bytes from RADIUS server
+Received RADIUS message
+RADIUS message: code=2 (Access-Accept) identifier=3 length=157
+   Attribute 26 (Vendor-Specific) length=12
+      Value: 00000137070600000001
+   Attribute 26 (Vendor-Specific) length=12
+      Value: 00000137080600000006
+   Attribute 26 (Vendor-Specific) length=42
+      Value: 000001371024a10f813adc75e24131f167093c62dbe281595783417825ab97465c52aeaad790291d
+   Attribute 26 (Vendor-Specific) length=42
+      Value: 000001371124aa53b650caf8b2eeddd13b0fd1e80dd86400ca793ef62531da61bedd7faeffbe4369
+   Attribute 79 (EAP-Message) length=6
+      Value: 03000004
+   Attribute 80 (Message-Authenticator) length=18
+      Value: 481869183403751eeffcff60cd41d988
+   Attribute 1 (User-Name) length=5
+      Value: 'bob'
+STA 02:00:00:00:00:01: Received RADIUS packet matched with a pending request, round trip time 0.00 sec
+
+RADIUS packet matching with station
+MS-MPPE-Send-Key (sign) - hexdump(len=16): 22 bc ee 6c 12 11 ca 83 f4 ca 75 88 84 3d ad b5
+MS-MPPE-Recv-Key (crypt) - hexdump(len=16): fa 0f f6 6c 71 b5 49 a3 8d a2 d9 c0 0f 9a 93 b5
+Use MS-MPPE-Send-Key to extend PMK to 32 octets
+decapsulated EAP packet (code=3 id=0 len=4) from RADIUS server: EAP Success
+EAPOL: Received EAP-Packet frame
+EAPOL: SUPP_BE entering state REQUEST
+EAPOL: getSuppRsp
+EAP: EAP entering state RECEIVED
+EAP: Received EAP-Success
+EAP: Status notification: completion (param=success)
+EAP: EAP entering state SUCCESS
+CTRL-EVENT-EAP-SUCCESS EAP authentication completed successfully
+EAPOL: IEEE 802.1X for plaintext connection; no EAPOL-Key frames required
+WPA: EAPOL processing complete
+Cancelling authentication timeout
+State: DISCONNECTED -> COMPLETED
+EAPOL: SUPP_PAE entering state AUTHENTICATED
+EAPOL: SUPP_BE entering state RECEIVE
+EAPOL: SUPP_BE entering state SUCCESS
+EAPOL: SUPP_BE entering state IDLE
+eapol_sm_cb: result=1
+EAPOL: Successfully fetched key (len=32)
+PMK from EAPOL - hexdump(len=32): fa 0f f6 6c 71 b5 49 a3 8d a2 d9 c0 0f 9a 93 b5 22 bc ee 6c 12 11 ca 83 f4 ca 75 88 84 3d ad b5
+WPA: Clear old PMK and PTK
+EAP: deinitialize previously used EAP method (26, MSCHAPV2) at EAP deinit
+MPPE keys OK: 1  mismatch: 0
+SUCCESS
