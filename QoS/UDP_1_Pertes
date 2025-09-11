@@ -1,0 +1,161 @@
+1%
+root@debian12vm:~# iperf3 -c 10.12.0.1 -B 10.12.0.2 -t 20 -u -b 50G
+Connecting to host 10.12.0.1, port 5201
+[  5] local 10.12.0.2 port 49881 connected to 10.12.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   173 MBytes  1.45 Gbits/sec  124927  
+[  5]   1.00-2.00   sec   172 MBytes  1.45 Gbits/sec  124902  
+[  5]   2.00-3.00   sec   172 MBytes  1.45 Gbits/sec  124825  
+[  5]   3.00-4.00   sec   170 MBytes  1.42 Gbits/sec  122891  
+[  5]   4.00-5.00   sec   170 MBytes  1.42 Gbits/sec  122901  
+[  5]   5.00-6.00   sec   174 MBytes  1.46 Gbits/sec  125798  
+[  5]   6.00-7.00   sec   173 MBytes  1.45 Gbits/sec  125467  
+[  5]   7.00-8.00   sec   174 MBytes  1.46 Gbits/sec  126309  
+[  5]   8.00-9.00   sec   173 MBytes  1.45 Gbits/sec  125493  
+[  5]   9.00-10.00  sec   173 MBytes  1.45 Gbits/sec  125514  
+[  5]  10.00-11.00  sec   174 MBytes  1.46 Gbits/sec  125641  
+[  5]  11.00-12.00  sec   173 MBytes  1.45 Gbits/sec  125523  
+[  5]  12.00-13.00  sec   174 MBytes  1.46 Gbits/sec  125958  
+[  5]  13.00-14.00  sec   174 MBytes  1.46 Gbits/sec  125838  
+[  5]  14.00-15.00  sec   172 MBytes  1.44 Gbits/sec  124546  
+[  5]  15.00-16.00  sec   172 MBytes  1.44 Gbits/sec  124525  
+[  5]  16.00-17.00  sec   174 MBytes  1.46 Gbits/sec  125659  
+[  5]  17.00-18.00  sec   173 MBytes  1.45 Gbits/sec  125161  
+[  5]  18.00-19.00  sec   174 MBytes  1.46 Gbits/sec  125944  
+[  5]  19.00-20.00  sec   170 MBytes  1.42 Gbits/sec  122831  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-20.00  sec  3.37 GBytes  1.45 Gbits/sec  0.000 ms  0/2500653 (0%)  sender
+[  5]   0.00-20.00  sec  3.34 GBytes  1.43 Gbits/sec  0.001 ms  25129/2500653 (1%)  receiver
+
+iperf Done.
+
+2%
+root@debian12vm:~# iperf3 -c 10.12.0.1 -B 10.12.0.2 -t 20 -u -b 50G
+Connecting to host 10.12.0.1, port 5201
+[  5] local 10.12.0.2 port 52177 connected to 10.12.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   175 MBytes  1.47 Gbits/sec  126657  
+[  5]   1.00-2.00   sec   172 MBytes  1.44 Gbits/sec  124598  
+[  5]   2.00-3.00   sec   166 MBytes  1.39 Gbits/sec  119959  
+[  5]   3.00-4.00   sec   175 MBytes  1.46 Gbits/sec  126443  
+[  5]   4.00-5.00   sec   173 MBytes  1.45 Gbits/sec  125504  
+[  5]   5.00-6.00   sec   176 MBytes  1.47 Gbits/sec  127337  
+[  5]   6.00-7.00   sec   176 MBytes  1.47 Gbits/sec  127258  
+[  5]   7.00-8.00   sec   177 MBytes  1.48 Gbits/sec  128097  
+[  5]   8.00-9.00   sec   174 MBytes  1.46 Gbits/sec  126208  
+[  5]   9.00-10.00  sec   177 MBytes  1.48 Gbits/sec  127911  
+[  5]  10.00-11.00  sec   175 MBytes  1.47 Gbits/sec  126674  
+[  5]  11.00-12.00  sec   176 MBytes  1.48 Gbits/sec  127800  
+[  5]  12.00-13.00  sec   176 MBytes  1.48 Gbits/sec  127487  
+[  5]  13.00-14.00  sec   176 MBytes  1.48 Gbits/sec  127754  
+[  5]  14.00-15.00  sec   178 MBytes  1.49 Gbits/sec  128649  
+[  5]  15.00-16.00  sec   176 MBytes  1.48 Gbits/sec  127754  
+[  5]  16.00-17.00  sec   175 MBytes  1.47 Gbits/sec  126947  
+[  5]  17.00-18.00  sec   174 MBytes  1.46 Gbits/sec  126320  
+[  5]  18.00-19.00  sec   174 MBytes  1.46 Gbits/sec  125953  
+[  5]  19.00-20.00  sec   177 MBytes  1.48 Gbits/sec  128027  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-20.00  sec  3.42 GBytes  1.47 Gbits/sec  0.000 ms  0/2533337 (0%)  sender
+[  5]   0.00-20.00  sec  3.35 GBytes  1.44 Gbits/sec  0.001 ms  50994/2533337 (2%)  receiver
+
+iperf Done.
+
+5%
+root@debian12vm:~# iperf3 -c 10.12.0.1 -B 10.12.0.2 -t 20 -u -b 50G
+Connecting to host 10.12.0.1, port 5201
+[  5] local 10.12.0.2 port 45487 connected to 10.12.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   180 MBytes  1.51 Gbits/sec  130510  
+[  5]   1.00-2.00   sec   180 MBytes  1.51 Gbits/sec  130538  
+[  5]   2.00-3.00   sec   179 MBytes  1.51 Gbits/sec  129932  
+[  5]   3.00-4.00   sec   179 MBytes  1.50 Gbits/sec  129313  
+[  5]   4.00-5.00   sec   178 MBytes  1.49 Gbits/sec  128922  
+[  5]   5.00-6.00   sec   178 MBytes  1.49 Gbits/sec  128863  
+[  5]   6.00-7.00   sec   179 MBytes  1.50 Gbits/sec  129390  
+[  5]   7.00-8.00   sec   178 MBytes  1.49 Gbits/sec  128967  
+[  5]   8.00-9.00   sec   178 MBytes  1.49 Gbits/sec  128725  
+[  5]   9.00-10.00  sec   179 MBytes  1.51 Gbits/sec  129940  
+[  5]  10.00-11.00  sec   179 MBytes  1.51 Gbits/sec  129944  
+[  5]  11.00-12.00  sec   179 MBytes  1.50 Gbits/sec  129620  
+[  5]  12.00-13.00  sec   180 MBytes  1.51 Gbits/sec  130021  
+[  5]  13.00-14.00  sec   179 MBytes  1.51 Gbits/sec  129951  
+[  5]  14.00-15.00  sec   180 MBytes  1.51 Gbits/sec  130095  
+[  5]  15.00-16.00  sec   179 MBytes  1.50 Gbits/sec  129550  
+[  5]  16.00-17.00  sec   179 MBytes  1.50 Gbits/sec  129824  
+[  5]  17.00-18.00  sec   179 MBytes  1.50 Gbits/sec  129366  
+[  5]  18.00-19.00  sec   178 MBytes  1.50 Gbits/sec  129223  
+[  5]  19.00-20.00  sec   178 MBytes  1.50 Gbits/sec  129186  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-20.00  sec  3.50 GBytes  1.50 Gbits/sec  0.000 ms  0/2591880 (0%)  sender
+[  5]   0.00-20.01  sec  3.32 GBytes  1.43 Gbits/sec  0.000 ms  129952/2591880 (5%)  receiver
+
+iperf Done.
+
+10%
+root@debian12vm:~# iperf3 -c 10.12.0.1 -B 10.12.0.2 -t 20 -u -b 50G
+Connecting to host 10.12.0.1, port 5201
+[  5] local 10.12.0.2 port 50519 connected to 10.12.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   187 MBytes  1.57 Gbits/sec  135146  
+[  5]   1.00-2.00   sec   188 MBytes  1.58 Gbits/sec  136296  
+[  5]   2.00-3.00   sec   186 MBytes  1.56 Gbits/sec  134956  
+[  5]   3.00-4.00   sec   188 MBytes  1.57 Gbits/sec  135925  
+[  5]   4.00-5.00   sec   188 MBytes  1.57 Gbits/sec  135953  
+[  5]   5.00-6.00   sec   190 MBytes  1.59 Gbits/sec  137409  
+[  5]   6.00-7.00   sec   190 MBytes  1.60 Gbits/sec  137794  
+[  5]   7.00-8.00   sec   187 MBytes  1.57 Gbits/sec  135508  
+[  5]   8.00-9.00   sec   191 MBytes  1.61 Gbits/sec  138611  
+[  5]   9.00-10.00  sec   191 MBytes  1.60 Gbits/sec  138358  
+[  5]  10.00-11.00  sec   191 MBytes  1.61 Gbits/sec  138617  
+[  5]  11.00-12.00  sec   188 MBytes  1.58 Gbits/sec  136483  
+[  5]  12.00-13.00  sec   190 MBytes  1.60 Gbits/sec  137688  
+[  5]  13.00-14.00  sec   191 MBytes  1.60 Gbits/sec  138055  
+[  5]  14.00-15.00  sec   189 MBytes  1.59 Gbits/sec  137054  
+[  5]  15.00-16.00  sec   191 MBytes  1.60 Gbits/sec  138307  
+[  5]  16.00-17.00  sec   190 MBytes  1.60 Gbits/sec  137806  
+[  5]  17.00-18.00  sec   190 MBytes  1.60 Gbits/sec  137693  
+[  5]  18.00-19.00  sec   190 MBytes  1.59 Gbits/sec  137602  
+[  5]  19.00-20.00  sec   190 MBytes  1.59 Gbits/sec  137629  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-20.00  sec  3.70 GBytes  1.59 Gbits/sec  0.000 ms  0/2742890 (0%)  sender
+[  5]   0.00-20.00  sec  3.33 GBytes  1.43 Gbits/sec  0.004 ms  274762/2742890 (10%)  receiver
+
+25%
+
+root@debian12vm:~# iperf3 -c 10.12.0.1 -B 10.12.0.2 -t 20 -u -b 50G
+Connecting to host 10.12.0.1, port 5201
+[  5] local 10.12.0.2 port 59339 connected to 10.12.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec   183 MBytes  1.53 Gbits/sec  132485  
+[  5]   1.00-2.00   sec   182 MBytes  1.52 Gbits/sec  131445  
+[  5]   2.00-3.00   sec   182 MBytes  1.53 Gbits/sec  131745  
+[  5]   3.00-4.00   sec   182 MBytes  1.53 Gbits/sec  131675  
+[  5]   4.00-5.00   sec   181 MBytes  1.52 Gbits/sec  131101  
+[  5]   5.00-6.00   sec   175 MBytes  1.47 Gbits/sec  126789  
+[  5]   6.00-7.00   sec   178 MBytes  1.50 Gbits/sec  129134  
+[  5]   7.00-8.00   sec   181 MBytes  1.52 Gbits/sec  131225  
+[  5]   8.00-9.00   sec   181 MBytes  1.52 Gbits/sec  130938  
+[  5]   9.00-10.00  sec   180 MBytes  1.51 Gbits/sec  130519  
+[  5]  10.00-11.00  sec   180 MBytes  1.51 Gbits/sec  130548  
+[  5]  11.00-12.00  sec   180 MBytes  1.51 Gbits/sec  130011  
+[  5]  12.00-13.00  sec   181 MBytes  1.52 Gbits/sec  131157  
+[  5]  13.00-14.00  sec   181 MBytes  1.51 Gbits/sec  130737  
+[  5]  14.00-15.00  sec   180 MBytes  1.51 Gbits/sec  130695  
+[  5]  15.00-16.00  sec   180 MBytes  1.51 Gbits/sec  129992  
+[  5]  16.00-17.00  sec   181 MBytes  1.52 Gbits/sec  131108  
+[  5]  17.00-18.00  sec   181 MBytes  1.52 Gbits/sec  131303  
+[  5]  18.00-19.00  sec   181 MBytes  1.52 Gbits/sec  131341  
+[  5]  19.00-20.00  sec   179 MBytes  1.50 Gbits/sec  129603  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-20.00  sec  3.52 GBytes  1.51 Gbits/sec  0.000 ms  0/2613551 (0%)  sender
+[  5]   0.00-20.00  sec  3.52 GBytes  1.51 Gbits/sec  0.001 ms  0/2613551 (0%)  receiver
+
+iperf Done.
+
+
+
