@@ -1,0 +1,28 @@
+root@debian12vm:~# iperf3 -c 10.12.0.1 -B 10.12.0.2 -t 20
+Connecting to host 10.12.0.1, port 5201
+[  5] local 10.12.0.2 port 49177 connected to 10.12.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec   514 MBytes  4.31 Gbits/sec  3518   72.1 KBytes       
+[  5]   1.00-2.00   sec   487 MBytes  4.08 Gbits/sec  3391   70.7 KBytes       
+[  5]   2.00-3.00   sec   450 MBytes  3.77 Gbits/sec  2667    156 KBytes       
+[  5]   3.00-4.00   sec   389 MBytes  3.26 Gbits/sec  2549    267 KBytes       
+[  5]   4.00-5.00   sec   176 MBytes  1.48 Gbits/sec  1551   77.8 KBytes       
+[  5]   5.00-6.00   sec  83.8 MBytes   703 Mbits/sec  573   74.9 KBytes       
+[  5]   6.00-7.00   sec   354 MBytes  2.97 Gbits/sec  2661    171 KBytes       
+[  5]   7.00-8.00   sec   475 MBytes  3.99 Gbits/sec  3859   41.0 KBytes       
+[  5]   8.00-9.00   sec   550 MBytes  4.61 Gbits/sec  4147    168 KBytes       
+[  5]   9.00-10.00  sec   446 MBytes  3.74 Gbits/sec  3311    158 KBytes       
+[  5]  10.00-11.00  sec   442 MBytes  3.71 Gbits/sec  2993   91.9 KBytes       
+[  5]  11.00-12.00  sec   398 MBytes  3.33 Gbits/sec  3006   93.3 KBytes       
+[  5]  12.00-13.00  sec   316 MBytes  2.65 Gbits/sec  2471   42.4 KBytes       
+[  5]  13.00-14.00  sec   528 MBytes  4.43 Gbits/sec  3647   66.5 KBytes       
+[  5]  14.00-15.00  sec   310 MBytes  2.60 Gbits/sec  2268   72.1 KBytes       
+[  5]  15.00-16.00  sec   380 MBytes  3.19 Gbits/sec  3386   99.0 KBytes       
+[  5]  16.00-17.00  sec   411 MBytes  3.45 Gbits/sec  3477    146 KBytes       
+[  5]  17.00-18.00  sec   379 MBytes  3.18 Gbits/sec  2938    139 KBytes       
+[  5]  18.00-19.00  sec   284 MBytes  2.38 Gbits/sec  2220   17.0 KBytes       
+[  5]  19.00-20.00  sec   758 MBytes  6.35 Gbits/sec  4672   93.3 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-20.00  sec  7.94 GBytes  3.41 Gbits/sec  59305             sender
+[  5]   0.00-20.00  sec  7.93 GBytes  3.41 Gbits/sec                  receiver
