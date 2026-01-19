@@ -1,0 +1,328 @@
+test@localhost:~/GOAD$ ./goad.sh
+
+   _____   _____          _____
+  / ____| / ||| \   /\   |  __ \
+ | |  __||  |||  | /  \  | |  | |
+ | | |_ ||  |||  |/ /\ \ | |  | |
+ | |__| ||  |||  / /__\ \| |__| |
+  \_____| \_|||_/________\_____/
+    Game Of Active Directory
+      Pwning is coming
+
+Goad management console type help or ? to list commands
+
+[*] Start Loading default instance
+[*] Current user is in docker group
+[*] CWD: /
+[*] Running command :  docker images |grep -c "goadansible"
+1
+[+] Docker image exist
+[+] Instance 870f5f-goad-virtualbox loaded
+[*] lab instances :
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃ Instance ID              ┃ Lab  ┃ Provider   ┃ IP Range        ┃ Status                 ┃ Is Default ┃ Extensions ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ > 870f5f-goad-virtualbox │ GOAD │ virtualbox │ 192.168.56.0/24 │ ready for provisioning │ Yes        │            │
+└──────────────────────────┴──────┴────────────┴─────────────────┴────────────────────────┴────────────┴────────────┘
+
+GOAD/virtualbox/docker/192.168.56.X (870f5f-goad-virtualbox) > load 870f5f-goad-virtualbox
+[*] Current user is in docker group
+[*] CWD: /
+[*] Running command :  docker images |grep -c "goadansible"
+1
+[+] Docker image exist
+[+] Instance 870f5f-goad-virtualbox loaded
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃ Instance ID              ┃ Lab  ┃ Provider   ┃ IP Range        ┃ Status                 ┃ Is Default ┃ Extensions ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ > 870f5f-goad-virtualbox │ GOAD │ virtualbox │ 192.168.56.0/24 │ ready for provisioning │ Yes        │            │
+└──────────────────────────┴──────┴────────────┴─────────────────┴────────────────────────┴────────────┴────────────┘
+
+GOAD/virtualbox/docker/192.168.56.X (870f5f-goad-virtualbox) > provision_lab_from vulnerabilities.yml
+[*] Loading inventory
+[+] Lab inventory : /home/test/GOAD/ad/GOAD/data/inventory file found
+[+] Provider inventory : /home/test/GOAD/workspace/870f5f-goad-virtualbox/inventory file found
+[+] Global inventory : /home/test/GOAD/globalsettings.ini file found
+[*] Loading playbook list
+[+] build.yml file found
+[+] ad-servers.yml file found
+[+] ad-parent_domain.yml file found
+[+] ad-child_domain.yml file found
+[+] wait5m.yml file found
+[+] ad-members.yml file found
+[+] ad-trusts.yml file found
+[+] ad-data.yml file found
+[+] ad-gmsa.yml file found
+[+] laps.yml file found
+[+] ad-relations.yml file found
+[+] adcs.yml file found
+[+] ad-acl.yml file found
+[+] servers.yml file found
+[+] security.yml file found
+[+] vulnerabilities.yml file found
+[*] skip build.yml
+[*] skip ad-servers.yml
+[*] skip ad-parent_domain.yml
+[*] skip ad-child_domain.yml
+[*] skip wait5m.yml
+[*] skip ad-members.yml
+[*] skip ad-trusts.yml
+[*] skip ad-data.yml
+[*] skip ad-gmsa.yml
+[*] skip laps.yml
+[*] skip ad-relations.yml
+[*] skip adcs.yml
+[*] skip ad-acl.yml
+[*] skip servers.yml
+[*] skip security.yml
+[*] Run playbook : vulnerabilities.yml with inventory file(s) : /goad/ad/GOAD/data/inventory, /goad/workspace/870f5f-goad-virtualbox/inventory, /goad/globalsettings.ini
+[*] Running command :  docker run -ti --rm --network host -h goadansible -v /home/test/GOAD/:/goad -w /goad/ansible goadansible /bin/bash -c 'ansible-playbook -i /goad/ad/GOAD/data/inventory -i
+/goad/workspace/870f5f-goad-virtualbox/inventory -i /goad/globalsettings.ini vulnerabilities.yml'
+
+PLAY [Read data files] ******************************************************************************************************************************************************************************************
+ [started TASK: Gathering Facts on dc01]
+ [started TASK: Gathering Facts on dc02]
+ [started TASK: Gathering Facts on dc03]
+ [started TASK: Gathering Facts on srv02]
+ [started TASK: Gathering Facts on srv03]
+
+TASK [Gathering Facts] ******************************************************************************************************************************************************************************************
+ok: [srv02]
+ok: [dc01]
+ok: [dc02]
+ok: [dc03]
+ok: [srv03]
+ [started TASK: save the Json data to a Variable as a Fact on dc01]
+
+TASK [save the Json data to a Variable as a Fact] ***************************************************************************************************************************************************************
+ok: [dc01]
+ [started TASK: find domain_adapter on dc01]
+
+TASK [find domain_adapter] **************************************************************************************************************************************************************************************
+ok: [dc01] => (item={'dns_domain': None, 'connection_name': 'Ethernet 2', 'default_gateway': None, 'mtu': 1500, 'interface_name': 'Intel(R) PRO/1000 MT Desktop Adapter #2', 'ipv6': {'address': 'fe80::24b3:a959:7ebf:bf85%4', 'prefix': '64'}, 'macaddress': '08:00:27:86:E7:BD', 'speed': 1000, 'interface_index': 4, 'ipv4': {'address': '192.168.56.10', 'prefix': '24'}})
+ [started TASK: find nat_adapter on dc01]
+
+TASK [find nat_adapter] *****************************************************************************************************************************************************************************************
+ok: [dc01] => (item={'dns_domain': 'iutbeziers.fr', 'connection_name': 'Ethernet', 'default_gateway': '10.0.2.2', 'mtu': 1500, 'interface_name': 'Intel(R) PRO/1000 MT Desktop Adapter', 'ipv6': {'address': 'fe80::109b:f42a:1b17:9684%6', 'prefix': '64'}, 'macaddress': '08:00:27:7A:A2:FC', 'speed': 1000, 'interface_index': 6, 'ipv4': {'address': '10.0.2.15', 'prefix': '24'}})
+ [started TASK: find number of interfaces on dc01]
+
+TASK [find number of interfaces] ********************************************************************************************************************************************************************************
+ok: [dc01]
+ [started TASK: find if two adapters on dc01]
+
+TASK [find if two adapters] *************************************************************************************************************************************************************************************
+ok: [dc01]
+ [started TASK: confirm nat_adapter on dc01]
+
+PLAY [Setup vulnerabilities with tasks] *************************************************************************************************************************************************************************
+ [started TASK: Gathering Facts on dc01]
+ [started TASK: Gathering Facts on dc02]
+ [started TASK: Gathering Facts on dc03]
+ [started TASK: Gathering Facts on srv02]
+ [started TASK: Gathering Facts on srv03]
+
+TASK [Gathering Facts] ******************************************************************************************************************************************************************************************
+ok: [dc03]
+ok: [srv02]
+ok: [dc01]
+ok: [dc02]
+ok: [srv03]
+ [started TASK: include_role : vulns/{{vuln}} on dc01]
+ [started TASK: include_role : vulns/{{vuln}} on dc02]
+ [started TASK: include_role : vulns/{{vuln}} on dc03]
+
+TASK [include_role : vulns/{{vuln}}] ****************************************************************************************************************************************************************************
+ [started TASK: include_role : vulns/{{vuln}} on srv02]
+ [started TASK: include_role : vulns/{{vuln}} on srv03]
+ [started TASK: vulns/disable_firewall : Disable Domain firewall on dc01]
+ [started TASK: vulns/disable_firewall : Disable Domain firewall on dc02]
+ [started TASK: vulns/disable_firewall : Disable Domain firewall on dc03]
+ [started TASK: vulns/disable_firewall : Disable Domain firewall on srv02]
+ [started TASK: vulns/disable_firewall : Disable Domain firewall on srv03]
+
+TASK [vulns/disable_firewall : Disable Domain firewall] *********************************************************************************************************************************************************
+ok: [srv02]
+ok: [dc02]
+ok: [dc01]
+ok: [dc03]
+ok: [srv03]
+ [started TASK: vulns/adcs_esc10_case1 : Set StrongCertificateBindingEnforcement to 0 on dc01]
+
+TASK [vulns/adcs_esc10_case1 : Set StrongCertificateBindingEnforcement to 0] ************************************************************************************************************************************
+ok: [dc01]
+ [started TASK: vulns/adcs_esc10_case2 : Set CertificateMappingMethods to 0x4 (UPN) on dc01]
+
+TASK [vulns/adcs_esc10_case2 : Set CertificateMappingMethods to 0x4 (UPN)] **************************************************************************************************************************************
+ok: [dc01]
+ [started TASK: vulns/directory : Create directory on dc02]
+ [started TASK: vulns/directory : Create directory on srv02]
+
+TASK [vulns/directory : Create directory] ***********************************************************************************************************************************************************************
+ok: [srv02] => (item={'key': 'shares', 'value': 'C:\\shares'})
+ok: [dc02] => (item={'key': 'setup', 'value': 'c:\\setup'})
+ok: [srv02] => (item={'key': 'all', 'value': 'C:\\shares\\all'})
+ [started TASK: vulns/credentials : Store a password in Credential Manager on dc02]
+
+TASK [vulns/credentials : Store a password in Credential Manager] ***********************************************************************************************************************************************
+changed: [dc02] => (item={'key': 'TERMSRV/castelblack', 'value': {'username': 'north\\robb.stark', 'secret': 'sexywolfy', 'runas': 'north\\robb.stark', 'runas_password': 'sexywolfy'}})
+ [started TASK: vulns/autologon : Add windows autologon on dc02]
+
+TASK [vulns/autologon : Add windows autologon] ******************************************************************************************************************************************************************
+ok: [dc02] => (item={'key': 'robb.stark', 'value': {'username': 'north\\robb.stark', 'password': 'sexywolfy'}})
+ [started TASK: vulns/files : Copy a single file on dc02]
+ [started TASK: vulns/files : Copy a single file on srv02]
+
+TASK [vulns/files : Copy a single file] *************************************************************************************************************************************************************************
+ok: [dc02] => (item={'key': 'rdp', 'value': {'src': 'dc02/bot_rdp.ps1', 'dest': 'c:\\setup\\bot_rdp.ps1'}})
+ok: [srv02] => (item={'key': 'website', 'value': {'src': 'srv02/wwwroot', 'dest': 'C:\\inetpub\\'}})
+ok: [dc02] => (item={'key': 'sysvol_fake_script', 'value': {'src': 'dc02/sysvol_scripts/script.ps1', 'dest': 'C:\\Windows\\SYSVOL\\domain\\scripts\\script.ps1'}})
+ok: [srv02] => (item={'key': 'letter_in_shares', 'value': {'src': 'srv02/all/arya.txt', 'dest': 'C:\\shares\\all\\arya.txt'}})
+ok: [dc02] => (item={'key': 'sysvol_secret', 'value': {'src': 'dc02/sysvol_scripts/secret.ps1', 'dest': 'C:\\Windows\\SYSVOL\\domain\\scripts\\secret.ps1'}})
+ [started TASK: vulns/enable_llmnr : Enable LLMNR protocol on dc02]
+
+TASK [vulns/enable_llmnr : Enable LLMNR protocol] ***************************************************************************************************************************************************************
+changed: [dc02]
+ [started TASK: vulns/enable_nbt-ns : Enable NBT-NS protocol on dc02]
+
+TASK [vulns/enable_nbt-ns : Enable NBT-NS protocol] *************************************************************************************************************************************************************
+changed: [dc02]
+ [started TASK: vulns/shares : Create directory if not exist on dc02]
+ [started TASK: vulns/shares : Create share on dc02]
+ [started TASK: vulns/shares : include_tasks on dc02]
+ [started TASK: vulns/shares : include_tasks on dc02]
+ [started TASK: vulns/shares : include_tasks on dc02]
+ [started TASK: vulns/shares : include_tasks on dc02]
+ [started TASK: vulns/ntlmdowngrade : Enable LmCompatibilityLevel on dc03]
+
+TASK [vulns/ntlmdowngrade : Enable LmCompatibilityLevel] ********************************************************************************************************************************************************
+ok: [dc03]
+ [started TASK: vulns/adcs_esc7 : Install module PSPKI on dc03]
+
+TASK [vulns/adcs_esc7 : Install module PSPKI] *******************************************************************************************************************************************************************
+changed: [dc03]
+ [started TASK: vulns/adcs_esc7 : ADD ManageCA rights on dc03]
+
+TASK [vulns/adcs_esc7 : ADD ManageCA rights] ********************************************************************************************************************************************************************
+ok: [dc03] => (item={'key': 'viserys', 'value': {'ca_manager': 'essos\\viserys.targaryen'}})
+ [started TASK: vulns/adcs_esc13 : Copy ESC13 script to remote host on dc03]
+
+TASK [vulns/adcs_esc13 : Copy ESC13 script to remote host] ******************************************************************************************************************************************************
+ok: [dc03]
+ [started TASK: vulns/adcs_esc13 : Run ESC13 script on dc03]
+
+TASK [vulns/adcs_esc13 : Run ESC13 script] **********************************************************************************************************************************************************************
+changed: [dc03] => (item={'key': 'esc13', 'value': {'adcs_esc13_group': 'greatmaster', 'adcs_esc13_template': 'ESC13'}})
+ [started TASK: vulns/adcs_esc15 : Run ESC15 on dc03]
+
+TASK [vulns/adcs_esc15 : Run ESC15] *****************************************************************************************************************************************************************************
+changed: [dc03]
+ [started TASK: vulns/openshares : Ensure directory structure for public share exists on srv02]
+ [started TASK: vulns/openshares : Ensure directory structure for public share exists on srv03]
+
+TASK [vulns/openshares : Ensure directory structure for public share exists] ************************************************************************************************************************************
+ok: [srv02]
+ok: [srv03]
+ [started TASK: vulns/openshares : Ensure public share exists on srv02]
+ [started TASK: vulns/openshares : Ensure public share exists on srv03]
+
+TASK [vulns/openshares : Ensure public share exists] ************************************************************************************************************************************************************
+ok: [srv02]
+ok: [srv03]
+ [started TASK: vulns/openshares : Add or update registry path to allow guest access in SMB on srv02]
+ [started TASK: vulns/openshares : Add or update registry path to allow guest access in SMB on srv03]
+
+TASK [vulns/openshares : Add or update registry path to allow guest access in SMB] ******************************************************************************************************************************
+ok: [srv02]
+ok: [srv03]
+ [started TASK: vulns/openshares : activate guest account on srv02]
+ [started TASK: vulns/openshares : activate guest account on srv03]
+
+TASK [vulns/openshares : activate guest account] ****************************************************************************************************************************************************************
+changed: [srv02]
+changed: [srv03]
+ [started TASK: vulns/openshares : Ensure directory structure for all share exists on srv02]
+ [started TASK: vulns/openshares : Ensure directory structure for all share exists on srv03]
+
+TASK [vulns/openshares : Ensure directory structure for all share exists] ***************************************************************************************************************************************
+ok: [srv02]
+ok: [srv03]
+ [started TASK: vulns/openshares : Add all share everyone rights on srv02]
+ [started TASK: vulns/openshares : Add all share everyone rights on srv03]
+
+TASK [vulns/openshares : Add all share everyone rights] *********************************************************************************************************************************************************
+ok: [srv02]
+ok: [srv03]
+ [started TASK: vulns/openshares : all shares on srv02]
+ [started TASK: vulns/openshares : all shares on srv03]
+
+TASK [vulns/openshares : all shares] ****************************************************************************************************************************************************************************
+ok: [srv02]
+ok: [srv03]
+ [started TASK: vulns/permissions : change folder allow rights on srv02]
+
+TASK [vulns/permissions : change folder allow rights] ***********************************************************************************************************************************************************
+ok: [srv02] => (item={'key': 'IIS_IUSRS_upload', 'value': {'path': 'C:\\inetpub\\wwwroot\\upload', 'user': 'IIS_IUSRS', 'rights': 'FullControl'}})
+ [started TASK: vulns/adcs_esc6 : Configure ATTRIBUTESUBJECTALTNAME2 on CA - ESC6 on srv03]
+
+TASK [vulns/adcs_esc6 : Configure ATTRIBUTESUBJECTALTNAME2 on CA - ESC6] ****************************************************************************************************************************************
+changed: [srv03]
+ [started TASK: vulns/adcs_esc11 : Disable IF_ENFORCEENCRYPTICERTREQUEST flag (ESC11) on srv03]
+
+TASK [vulns/adcs_esc11 : Disable IF_ENFORCEENCRYPTICERTREQUEST flag (ESC11)] ************************************************************************************************************************************
+changed: [srv03]
+ [started TASK: include_role : ps on dc01]
+ [started TASK: include_role : ps on dc02]
+
+TASK [include_role : ps] ****************************************************************************************************************************************************************************************
+ [started TASK: include_role : ps on dc03]
+ [started TASK: include_role : ps on srv02]
+ [started TASK: include_role : ps on srv03]
+ [started TASK: ps : Play task {{ps_script}} on dc01]
+
+TASK [ps : Play task ../ad/GOAD/scripts/sidhistory.ps1] *********************************************************************************************************************************************************
+changed: [dc01]
+ [started TASK: ps : Play task {{ps_script}} on dc02]
+
+TASK [ps : Play task ../ad/GOAD/scripts/asrep_roasting.ps1] *****************************************************************************************************************************************************
+changed: [dc02]
+ [started TASK: ps : Play task {{ps_script}} on dc02]
+
+TASK [ps : Play task ../ad/GOAD/scripts/constrained_delegation_use_any.ps1] *************************************************************************************************************************************
+changed: [dc02]
+ [started TASK: ps : Play task {{ps_script}} on dc02]
+
+TASK [ps : Play task ../ad/GOAD/scripts/constrained_delegation_kerb_only.ps1] ***********************************************************************************************************************************
+changed: [dc02]
+ [started TASK: ps : Play task {{ps_script}} on dc02]
+
+TASK [ps : Play task ../ad/GOAD/scripts/ntlm_relay.ps1] *********************************************************************************************************************************************************
+changed: [dc02]
+ [started TASK: ps : Play task {{ps_script}} on dc02]
+
+TASK [ps : Play task ../ad/GOAD/scripts/responder.ps1] **********************************************************************************************************************************************************
+changed: [dc02]
+ [started TASK: ps : Play task {{ps_script}} on dc02]
+
+TASK [ps : Play task ../ad/GOAD/scripts/gpo_abuse.ps1] **********************************************************************************************************************************************************
+changed: [dc02]
+ [started TASK: ps : Play task {{ps_script}} on dc02]
+
+TASK [ps : Play task ../ad/GOAD/scripts/rdp_scheduler.ps1] ******************************************************************************************************************************************************
+changed: [dc02]
+ [started TASK: ps : Play task {{ps_script}} on dc03]
+
+TASK [ps : Play task ../ad/GOAD/scripts/asrep_roasting2.ps1] ****************************************************************************************************************************************************
+changed: [dc03]
+ [started HANDLER: vulns/adcs_esc11 : restart-adcs on srv03]
+
+RUNNING HANDLER [vulns/adcs_esc11 : restart-adcs] ***************************************************************************************************************************************************************
+changed: [srv03]
+
+PLAY RECAP ******************************************************************************************************************************************************************************************************
+dc01                       : ok=11   changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+dc02                       : ok=16   changed=10   unreachable=0    failed=0    skipped=6    rescued=0    ignored=0
+dc03                       : ok=10   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+srv02                      : ok=13   changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+srv03                      : ok=13   changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+[*] Provisioned from vulnerabilities.yml in 01:01:43
